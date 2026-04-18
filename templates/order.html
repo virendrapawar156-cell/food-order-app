@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Food</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Order Your Food 🍔</h2>
+
+        <form action="/place_order" method="POST">
+            <input type="text" name="Item" placeholder="Food Item" required>
+            <input type="number" name="Quantity" placeholder="Quantity" required>
+            <input type="text" name="address" placeholder="address" required>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

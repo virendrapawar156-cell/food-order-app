@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Create Account</h2>
+
+        <!-- Signup Form -->
+        <form action="/signup" method="POST">
+            <input type="text" name="Name" placeholder="Full Name" required>
+            <input type="email" name="Email" placeholder="Email Address" required>
+            <input type="text" name="Phone" placeholder="Phone Number" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- LOGIN SECTION -->
+        <div style="margin-top:20px;">
+            <p>Already have an account?</p>
+
+            <form action="/login" method="get">
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

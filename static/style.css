@@ -1,0 +1,216 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.card h2 {
+    margin-bottom: 20px;
+    color: #ff6a00;
+}
+
+/* Emoji */
+.card h2::after {
+    content: " 😋";
+}
+
+/* Inputs */
+.card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Input focus */
+.card input:focus {
+    border-color: #ee0979;
+    box-shadow: 0 0 5px rgba(238, 9, 121, 0.5);
+}
+
+/* Input error */
+.input-error {
+    border: 2px solid red !important;
+}
+
+/* Buttons */
+.card button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover */
+.card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ================= SUCCESS PAGE ================= */
+
+.success-card h2 {
+    color: #28a745 !important;
+    margin-bottom: 10px;
+}
+
+/* Success text */
+.success-card p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Success button */
+.home-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #28a745, #00c851);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= ERROR BOX ================= */
+
+.error-box {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pop animation */
+.success-card h2 {
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ================= BIKE DELIVERY ANIMATION ================= */
+
+.road {
+    width: 100%;
+    height: 60px;
+    background: #ddd;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Moving road lines */
+.road::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        to right,
+        white 0px,
+        white 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    top: 50%;
+    transform: translateY(-50%);
+    animation: roadMove 1s linear infinite;
+}
+
+/* Bike container */
+.bike {
+    position: absolute;
+    top: 5px;
+    left: -100px;
+    animation: moveBike 4s linear infinite;
+}
+
+/* Bike image */
+.bike img {
+    width: 50px;
+    display: block;
+}
+
+/* Smooth bike movement */
+@keyframes moveBike {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Road animation */
+@keyframes roadMove {
+    0% {
+        transform: translateX(0) translateY(-50%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
