@@ -4,17 +4,18 @@ import os
 
 app = Flask(__name__)
 
-# 🔥 REQUIRED for Render (secure session key)
+# ================= SECRET KEY =================
 app.secret_key = os.environ.get("SECRET_KEY", "secret123")
 
 # ================= MONGODB =================
 MONGO_URI = os.environ.get(
     "MONGO_URI",
-    "mongodb+srv://virendrapawar:veeru123@cluster1.93rec0a.mongodb.net/food_app?retryWrites=true&w=majority&appName=Cluster1"
+    "mongodb+srv://virendrapawar:veeru@cluster1.93rec0a.mongodb.net/food_app?retryWrites=true&w=majority"
 )
 
 client = MongoClient(MONGO_URI)
 db = client["food_app"]
+
 users_collection = db["users"]
 orders_collection = db["orders"]
 
@@ -95,4 +96,4 @@ def logout():
 
 # ================= RUN =================
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(debug=True)
