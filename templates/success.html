@@ -4,23 +4,24 @@
     <title>Order Success</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <div class="container">
     <div class="card success-card">
-        
-        <h2>Order Placed Successfully 🎉</h2>
-        <p>Your food is on the way 🚀</p>
 
-        <!-- BIKE ANIMATION -->
-        <div class="road">
-           <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" width="50">
-        </div>
+        <h2>Order Placed Successfully ✅</h2>
+        <p>Your food is on the way 🚚</p>
 
-        <!-- BACK BUTTON -->
-        <form action="/" method="get">
-            <button class="home-btn">Go to Home</button>
-        </form>
+        <!-- BACK TO OPTIONS -->
+        <a href="/options">
+            <button class="home-btn">Order More 🍽️</button>
+        </a>
+
+        <!-- LOGOUT (optional) -->
+        <a href="/logout">
+            <button style="margin-top:10px; background:red;">Logout</button>
+        </a>
 
     </div>
 </div>

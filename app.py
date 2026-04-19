@@ -4,16 +4,11 @@ import os
 
 app = Flask(__name__)
 
-# ================= SECRET KEY =================
-app.secret_key = os.environ.get("SECRET_KEY", "secret123")
+# SECRET KEY
+app.secret_key = "secret123"
 
-# ================= MONGODB =================
-MONGO_URI = os.environ.get(
-    "MONGO_URI",
-    "mongodb+srv://virendrapawar:veeru@cluster1.93rec0a.mongodb.net/food_app?retryWrites=true&w=majority"
-)
-
-client = MongoClient(MONGO_URI)
+# MONGODB
+client = MongoClient("mongodb://localhost:27017/")
 db = client["food_app"]
 
 users_collection = db["users"]
@@ -23,7 +18,6 @@ orders_collection = db["orders"]
 @app.route('/')
 def home():
     return render_template("signup.html")
-
 
 # ================= SIGNUP =================
 @app.route('/signup', methods=['POST'])
@@ -37,8 +31,7 @@ def signup():
     users_collection.insert_one(user)
     session['user'] = user["email"]
 
-    return redirect('/order')
-
+    return redirect('/options')
 
 # ================= LOGIN =================
 @app.route('/login', methods=['GET', 'POST'])
@@ -54,20 +47,48 @@ def login():
 
         if user:
             session['user'] = email
-            return redirect('/order')
+            return redirect('/options')
         else:
-            return render_template("login.html", error="Invalid email or phone ❌")
+            return render_template("login.html", error="Invalid ❌")
 
     return render_template("login.html")
 
+# ================= OPTIONS =================
+@app.route('/options')
+def options():
+    if 'user' not in session:
+        return redirect('/')
+    return render_template("options.html")
+
+# ================= CATEGORY PAGES =================
+@app.route('/meal')
+def meal():
+    return render_template("meals.html")   # ⚠️ file name match
+
+@app.route('/vegetables')
+def vegetables():
+    return render_template("vegetables.html")
+
+@app.route('/fastfood')
+def fastfood():
+    return render_template("fastfood.html")
+
+@app.route('/fruits')
+def fruits():
+    return render_template("fruits.html")
+
+@app.route('/drinks')
+def drinks():
+    return render_template("drinks.html")
 
 # ================= ORDER PAGE =================
 @app.route('/order')
 def order():
     if 'user' not in session:
         return redirect('/')
-    return render_template("order.html")
-
+    
+    item = request.args.get('item')  # 🔥 auto fill
+    return render_template("order.html", item=item)
 
 # ================= PLACE ORDER =================
 @app.route('/place_order', methods=['POST'])
@@ -86,13 +107,11 @@ def place_order():
 
     return render_template("success.html")
 
-
 # ================= LOGOUT =================
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     return redirect('/')
-
 
 # ================= RUN =================
 if __name__ == "__main__":
