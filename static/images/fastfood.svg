@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="title desc">
+  <title id="title">Pizza Burger Fast Food</title>
+  <desc id="desc">A burger, pizza slice, and fries.</desc>
+  <rect width="360" height="240" fill="#fff4df"/>
+  <path d="M73 124c4-31 101-31 105 0z" fill="#f6b24a"/>
+  <rect x="75" y="124" width="101" height="17" rx="8" fill="#5b3b25"/>
+  <rect x="78" y="141" width="96" height="14" rx="7" fill="#ffcf4c"/>
+  <path d="M80 155h94c-7 21-87 21-94 0z" fill="#e79b39"/>
+  <path d="M205 78l78 108-107-27z" fill="#f8c642" stroke="#d48322" stroke-width="5"/>
+  <circle cx="222" cy="122" r="7" fill="#d83d32"/>
+  <circle cx="244" cy="151" r="7" fill="#d83d32"/>
+  <circle cx="219" cy="155" r="6" fill="#4d9a43"/>
+  <rect x="250" y="79" width="10" height="67" rx="4" fill="#f4c23f"/>
+  <rect x="268" y="86" width="10" height="65" rx="4" fill="#f4c23f"/>
+  <rect x="286" y="76" width="10" height="72" rx="4" fill="#f4c23f"/>
+  <path d="M242 142h64l-8 44h-48z" fill="#e74935"/>
+  <text x="180" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#8f3a16">Fast Food</text>
+</svg>

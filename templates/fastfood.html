@@ -7,34 +7,43 @@
 
 <body class="fast-bg">
 
+{% set fastfoods = [
+    {"name": "Burger", "image": "https://loremflickr.com/320/220/burger"},
+    {"name": "Pizza", "image": "https://loremflickr.com/320/220/pizza"},
+    {"name": "French Fries", "image": "https://loremflickr.com/320/220/french,fries"},
+    {"name": "Sandwich", "image": "https://loremflickr.com/320/220/sandwich"},
+    {"name": "Hot Dog", "image": "https://loremflickr.com/320/220/hot,dog"},
+    {"name": "Noodles", "image": "https://loremflickr.com/320/220/noodles"},
+    {"name": "Manchurian", "image": "https://loremflickr.com/320/220/manchurian"},
+    {"name": "Spring Rolls", "image": "https://loremflickr.com/320/220/spring,rolls"},
+    {"name": "Wrap", "image": "https://loremflickr.com/320/220/food,wrap"},
+    {"name": "Shawarma", "image": "https://loremflickr.com/320/220/shawarma"},
+    {"name": "Pasta", "image": "https://loremflickr.com/320/220/pasta"},
+    {"name": "Tacos", "image": "https://loremflickr.com/320/220/tacos"},
+    {"name": "Nachos", "image": "https://loremflickr.com/320/220/nachos"},
+    {"name": "Popcorn", "image": "https://loremflickr.com/320/220/popcorn"},
+    {"name": "Fried Chicken", "image": "https://loremflickr.com/320/220/fried,chicken"},
+    {"name": "Cheese Balls", "image": "https://loremflickr.com/320/220/cheese,balls"},
+    {"name": "Momos", "image": "https://loremflickr.com/320/220/momos"},
+    {"name": "Garlic Bread", "image": "https://loremflickr.com/320/220/garlic,bread"},
+    {"name": "Club Sandwich", "image": "https://loremflickr.com/320/220/club,sandwich"},
+    {"name": "Paneer Roll", "image": "https://loremflickr.com/320/220/paneer,roll"}
+] %}
+
 <div class="container">
-    <div class="card">
-        <h2>Select Fast Food 🍔</h2>
+    <div class="card menu-card">
+        <h2>Select Fast Food</h2>
 
-        <a href="/order?item=Burger"><button>Burger</button></a>
-        <a href="/order?item=Pizza"><button>Pizza</button></a>
-        <a href="/order?item=French%20Fries"><button>French Fries</button></a>
-        <a href="/order?item=Sandwich"><button>Sandwich</button></a>
-        <a href="/order?item=Hot%20Dog"><button>Hot Dog</button></a>
-        <a href="/order?item=Noodles"><button>Noodles</button></a>
-        <a href="/order?item=Manchurian"><button>Manchurian</button></a>
-        <a href="/order?item=Spring%20Rolls"><button>Spring Rolls</button></a>
-        <a href="/order?item=Wrap"><button>Wrap</button></a>
-        <a href="/order?item=Shawarma"><button>Shawarma</button></a>
-        <a href="/order?item=Pasta"><button>Pasta</button></a>
-        <a href="/order?item=Tacos"><button>Tacos</button></a>
-        <a href="/order?item=Nachos"><button>Nachos</button></a>
-        <a href="/order?item=Popcorn"><button>Popcorn</button></a>
-        <a href="/order?item=Fried%20Chicken"><button>Fried Chicken</button></a>
-        <a href="/order?item=Cheese%20Balls"><button>Cheese Balls</button></a>
-        <a href="/order?item=Momos"><button>Momos</button></a>
-        <a href="/order?item=Garlic%20Bread"><button>Garlic Bread</button></a>
-        <a href="/order?item=Club%20Sandwich"><button>Club Sandwich</button></a>
-        <a href="/order?item=Paneer%20Roll"><button>Paneer Roll</button></a>
+        <div class="menu-grid">
+            {% for fastfood in fastfoods %}
+            <a class="menu-item" href="/order?item={{ fastfood.name|urlencode }}">
+                <img src="{{ fastfood.image }}" alt="{{ fastfood.name }}" loading="lazy">
+                <span>{{ fastfood.name }}</span>
+            </a>
+            {% endfor %}
+        </div>
 
-        <br><br>
-        <a href="/options"><button>⬅ Back</button></a>
-
+        <a class="back-link" href="/options"><button>Back</button></a>
     </div>
 </div>
 

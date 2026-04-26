@@ -7,34 +7,43 @@
 
 <body class="drink-bg">
 
+{% set drinks = [
+    {"name": "Water", "image": "https://loremflickr.com/320/220/water,glass"},
+    {"name": "Coca Cola", "image": "https://loremflickr.com/320/220/cola,drink"},
+    {"name": "Pepsi", "image": "https://loremflickr.com/320/220/pepsi,drink"},
+    {"name": "Sprite", "image": "https://loremflickr.com/320/220/lemon,lime,soda"},
+    {"name": "Fanta", "image": "https://loremflickr.com/320/220/orange,soda"},
+    {"name": "Orange Juice", "image": "https://loremflickr.com/320/220/orange,juice"},
+    {"name": "Mango Juice", "image": "https://loremflickr.com/320/220/mango,juice"},
+    {"name": "Apple Juice", "image": "https://loremflickr.com/320/220/apple,juice"},
+    {"name": "Milkshake", "image": "https://loremflickr.com/320/220/milkshake"},
+    {"name": "Cold Coffee", "image": "https://loremflickr.com/320/220/iced,coffee"},
+    {"name": "Tea", "image": "https://loremflickr.com/320/220/tea,cup"},
+    {"name": "Coffee", "image": "https://loremflickr.com/320/220/coffee,cup"},
+    {"name": "Lassi", "image": "https://loremflickr.com/320/220/lassi,drink"},
+    {"name": "Buttermilk", "image": "https://loremflickr.com/320/220/buttermilk,drink"},
+    {"name": "Energy Drink", "image": "https://loremflickr.com/320/220/energy,drink"},
+    {"name": "Protein Shake", "image": "https://loremflickr.com/320/220/protein,shake"},
+    {"name": "Lemonade", "image": "https://loremflickr.com/320/220/lemonade"},
+    {"name": "Iced Tea", "image": "https://loremflickr.com/320/220/iced,tea"},
+    {"name": "Smoothie", "image": "https://loremflickr.com/320/220/smoothie"},
+    {"name": "Chocolate Shake", "image": "https://loremflickr.com/320/220/chocolate,shake"}
+] %}
+
 <div class="container">
-    <div class="card">
-        <h2>Select Drinks 🥤</h2>
+    <div class="card menu-card">
+        <h2>Select Drinks</h2>
 
-        <a href="/order?item=Water"><button>Water</button></a>
-        <a href="/order?item=Coca%20Cola"><button>Coca Cola</button></a>
-        <a href="/order?item=Pepsi"><button>Pepsi</button></a>
-        <a href="/order?item=Sprite"><button>Sprite</button></a>
-        <a href="/order?item=Fanta"><button>Fanta</button></a>
-        <a href="/order?item=Orange%20Juice"><button>Orange Juice</button></a>
-        <a href="/order?item=Mango%20Juice"><button>Mango Juice</button></a>
-        <a href="/order?item=Apple%20Juice"><button>Apple Juice</button></a>
-        <a href="/order?item=Milkshake"><button>Milkshake</button></a>
-        <a href="/order?item=Cold%20Coffee"><button>Cold Coffee</button></a>
-        <a href="/order?item=Tea"><button>Tea</button></a>
-        <a href="/order?item=Coffee"><button>Coffee</button></a>
-        <a href="/order?item=Lassi"><button>Lassi</button></a>
-        <a href="/order?item=Buttermilk"><button>Buttermilk</button></a>
-        <a href="/order?item=Energy%20Drink"><button>Energy Drink</button></a>
-        <a href="/order?item=Protein%20Shake"><button>Protein Shake</button></a>
-        <a href="/order?item=Lemonade"><button>Lemonade</button></a>
-        <a href="/order?item=Iced%20Tea"><button>Iced Tea</button></a>
-        <a href="/order?item=Smoothie"><button>Smoothie</button></a>
-        <a href="/order?item=Chocolate%20Shake"><button>Chocolate Shake</button></a>
+        <div class="menu-grid">
+            {% for drink in drinks %}
+            <a class="menu-item" href="/order?item={{ drink.name|urlencode }}">
+                <img src="{{ drink.image }}" alt="{{ drink.name }}" loading="lazy">
+                <span>{{ drink.name }}</span>
+            </a>
+            {% endfor %}
+        </div>
 
-        <br><br>
-        <a href="/options"><button>⬅ Back</button></a>
-
+        <a class="back-link" href="/options"><button>Back</button></a>
     </div>
 </div>
 

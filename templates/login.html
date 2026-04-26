@@ -8,20 +8,34 @@
 
 <div class="container">
     <div class="card">
+        
         <h2>Welcome Back 👋</h2>
 
+        <!-- ERROR BOX -->
+        {% if error %}
+        <div class="error-box">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <!-- LOGIN FORM -->
         <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Enter Email" required>
-            <input type="text" name="phone" placeholder="Enter Phone Number" required>
+            <input type="email" name="email" placeholder="Enter Email"
+                   class="{% if error %}input-error{% endif %}" required>
+
+            <input type="text" name="phone" placeholder="Enter Phone Number"
+                   class="{% if error %}input-error{% endif %}" required>
 
             <button type="submit">Login</button>
         </form>
 
-        <p style="margin-top:15px;">New user?</p>
-
-        <form action="/" method="get">
-            <button type="submit">Create Account</button>
-        </form>
+        <!-- BACK TO SIGNUP -->
+        <div style="margin-top: 15px;">
+            <p>New user?</p>
+            <form action="/" method="get">
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
 
     </div>
 </div>

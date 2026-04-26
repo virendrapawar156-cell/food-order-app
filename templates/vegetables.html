@@ -6,36 +6,44 @@
 </head>
 
 <body class="veg-bg">
-    
+
+{% set vegetables = [
+    {"name": "Potato", "image": "https://loremflickr.com/320/220/potato,vegetable"},
+    {"name": "Tomato", "image": "https://loremflickr.com/320/220/tomato,vegetable"},
+    {"name": "Onion", "image": "https://loremflickr.com/320/220/onion,vegetable"},
+    {"name": "Carrot", "image": "https://loremflickr.com/320/220/carrot,vegetable"},
+    {"name": "Spinach", "image": "https://loremflickr.com/320/220/spinach,vegetable"},
+    {"name": "Cauliflower", "image": "https://loremflickr.com/320/220/cauliflower,vegetable"},
+    {"name": "Broccoli", "image": "https://loremflickr.com/320/220/broccoli,vegetable"},
+    {"name": "Cabbage", "image": "https://loremflickr.com/320/220/cabbage,vegetable"},
+    {"name": "Brinjal", "image": "https://loremflickr.com/320/220/brinjal,eggplant"},
+    {"name": "Capsicum", "image": "https://loremflickr.com/320/220/capsicum,bellpepper"},
+    {"name": "Peas", "image": "https://loremflickr.com/320/220/peas,vegetable"},
+    {"name": "Cucumber", "image": "https://loremflickr.com/320/220/cucumber,vegetable"},
+    {"name": "Pumpkin", "image": "https://loremflickr.com/320/220/pumpkin,vegetable"},
+    {"name": "Beetroot", "image": "https://loremflickr.com/320/220/beetroot,vegetable"},
+    {"name": "Radish", "image": "https://loremflickr.com/320/220/radish,vegetable"},
+    {"name": "Ladies Finger", "image": "https://loremflickr.com/320/220/okra,vegetable"},
+    {"name": "Bitter Gourd", "image": "https://loremflickr.com/320/220/bitter,gourd"},
+    {"name": "Bottle Gourd", "image": "https://loremflickr.com/320/220/bottle,gourd"},
+    {"name": "Sweet Corn", "image": "https://loremflickr.com/320/220/sweet,corn"},
+    {"name": "Green Beans", "image": "https://loremflickr.com/320/220/green,beans"}
+] %}
 
 <div class="container">
-    <div class="card">
-        <h2>Select Vegetables 🥦</h2>
+    <div class="card menu-card">
+        <h2>Select Vegetables</h2>
 
-        <a href="/order?item=Potato"><button>Potato</button></a>
-        <a href="/order?item=Tomato"><button>Tomato</button></a>
-        <a href="/order?item=Onion"><button>Onion</button></a>
-        <a href="/order?item=Carrot"><button>Carrot</button></a>
-        <a href="/order?item=Spinach"><button>Spinach</button></a>
-        <a href="/order?item=Cauliflower"><button>Cauliflower</button></a>
-        <a href="/order?item=Broccoli"><button>Broccoli</button></a>
-        <a href="/order?item=Cabbage"><button>Cabbage</button></a>
-        <a href="/order?item=Brinjal"><button>Brinjal</button></a>
-        <a href="/order?item=Capsicum"><button>Capsicum</button></a>
-        <a href="/order?item=Peas"><button>Peas</button></a>
-        <a href="/order?item=Cucumber"><button>Cucumber</button></a>
-        <a href="/order?item=Pumpkin"><button>Pumpkin</button></a>
-        <a href="/order?item=Beetroot"><button>Beetroot</button></a>
-        <a href="/order?item=Radish"><button>Radish</button></a>
-        <a href="/order?item=Ladies%20Finger"><button>Ladies Finger</button></a>
-        <a href="/order?item=Bitter%20Gourd"><button>Bitter Gourd</button></a>
-        <a href="/order?item=Bottle%20Gourd"><button>Bottle Gourd</button></a>
-        <a href="/order?item=Sweet%20Corn"><button>Sweet Corn</button></a>
-        <a href="/order?item=Green%20Beans"><button>Green Beans</button></a>
+        <div class="menu-grid">
+            {% for vegetable in vegetables %}
+            <a class="menu-item" href="/order?item={{ vegetable.name|urlencode }}">
+                <img src="{{ vegetable.image }}" alt="{{ vegetable.name }}" loading="lazy">
+                <span>{{ vegetable.name }}</span>
+            </a>
+            {% endfor %}
+        </div>
 
-        <br><br>
-        <a href="/options"><button>⬅ Back</button></a>
-
+        <a class="back-link" href="/options"><button>Back</button></a>
     </div>
 </div>
 

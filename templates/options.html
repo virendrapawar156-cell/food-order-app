@@ -7,16 +7,26 @@
 
 <body class="options-bg">
 
+{% set categories = [
+    {"name": "Meals", "url": "/meal", "image": "images/meals.svg"},
+    {"name": "Vegetables", "url": "/vegetables", "image": "images/vegetables.svg"},
+    {"name": "Fast Food", "url": "/fastfood", "image": "images/fastfood.svg"},
+    {"name": "Fruits", "url": "/fruits", "image": "images/fruits.svg"},
+    {"name": "Drinks", "url": "/drinks", "image": "images/drinks.svg"}
+] %}
+
 <div class="container">
-    <div class="card">
-        <h2>Select Category 🍽️</h2>
+    <div class="card menu-card">
+        <h2>Select Category</h2>
 
-        <a href="/meal"><button>Meals 🍛</button></a>
-        <a href="/vegetables"><button>Vegetables 🥦</button></a>
-        <a href="/fastfood"><button>Fast Food 🍔</button></a>
-        <a href="/fruits"><button>Fruits 🍎</button></a>
-        <a href="/drinks"><button>Drinks 🥤</button></a>
-
+        <div class="menu-grid category-grid">
+            {% for category in categories %}
+            <a class="menu-item category-item" href="{{ category.url }}">
+                <img src="{{ url_for('static', filename=category.image) }}" alt="{{ category.name }}" loading="lazy">
+                <span>{{ category.name }}</span>
+            </a>
+            {% endfor %}
+        </div>
     </div>
 </div>
 

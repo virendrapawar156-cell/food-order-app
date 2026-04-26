@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="title desc">
+  <title id="title">Roti Sabji Meal</title>
+  <desc id="desc">A plate with roti, sabji, rice, and dal.</desc>
+  <rect width="360" height="240" fill="#fff1dc"/>
+  <circle cx="180" cy="126" r="86" fill="#f9fafb" stroke="#ded6c8" stroke-width="5"/>
+  <circle cx="130" cy="108" r="43" fill="#d8a55f"/>
+  <circle cx="130" cy="108" r="32" fill="#f2cb85"/>
+  <path d="M101 101c18-16 43-17 61 3" fill="none" stroke="#b77b33" stroke-width="5" stroke-linecap="round"/>
+  <rect x="181" y="80" width="70" height="54" rx="16" fill="#4f9c44"/>
+  <circle cx="199" cy="99" r="8" fill="#f6d365"/>
+  <circle cx="224" cy="112" r="7" fill="#dc4f39"/>
+  <circle cx="239" cy="94" r="6" fill="#fff1a8"/>
+  <ellipse cx="211" cy="163" rx="43" ry="21" fill="#f8f0d2"/>
+  <circle cx="260" cy="151" r="24" fill="#f4b942"/>
+  <circle cx="260" cy="151" r="16" fill="#ffd36b"/>
+  <text x="180" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#7a3e12">Meals</text>
+</svg>

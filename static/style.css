@@ -41,6 +41,10 @@ body:not(.options-bg):not(.meal-bg):not(.veg-bg):not(.fast-bg):not(.fruit-bg):no
     animation: fadeIn 0.8s ease-in-out;
 }
 
+.menu-card {
+    width: min(980px, 100%);
+}
+
 /* ================= HEADING ================= */
 .card h2 {
     margin-bottom: 20px;
@@ -78,6 +82,63 @@ body:not(.options-bg):not(.meal-bg):not(.veg-bg):not(.fast-bg):not(.fruit-bg):no
 .card button:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ================= MENU GRID ================= */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+    overflow: hidden;
+    border: 1px solid #f1d4d4;
+    border-radius: 8px;
+    background: #fff8f7;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+.menu-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    background: #f6dddd;
+}
+
+.menu-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 48px;
+    padding: 10px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.category-item {
+    min-height: 220px;
+}
+
+.back-link {
+    display: block;
 }
 
 /* ================= SEARCH BAR ================= */

@@ -7,46 +7,53 @@
 
 <body class="meal-bg">
 
+{% set meals = [
+    {"name": "Paneer Butter Masala", "image": "https://loremflickr.com/320/220/paneer,butter,masala"},
+    {"name": "Chicken Biryani", "image": "https://loremflickr.com/320/220/chicken,biryani"},
+    {"name": "Dal Tadka", "image": "https://loremflickr.com/320/220/dal,tadka"},
+    {"name": "Rajma Chawal", "image": "https://loremflickr.com/320/220/rajma,chawal"},
+    {"name": "Veg Pulao", "image": "https://loremflickr.com/320/220/veg,pulao"},
+    {"name": "Butter Chicken", "image": "https://loremflickr.com/320/220/butter,chicken"},
+    {"name": "Chole Bhature", "image": "https://loremflickr.com/320/220/chole,bhature"},
+    {"name": "Fried Rice", "image": "https://loremflickr.com/320/220/fried,rice"},
+    {"name": "Jeera Rice", "image": "https://loremflickr.com/320/220/jeera,rice"},
+    {"name": "Kadhi Chawal", "image": "https://loremflickr.com/320/220/kadhi,chawal"},
+    {"name": "Palak Paneer", "image": "https://loremflickr.com/320/220/palak,paneer"},
+    {"name": "Matar Paneer", "image": "https://loremflickr.com/320/220/matar,paneer"},
+    {"name": "Egg Curry", "image": "https://loremflickr.com/320/220/egg,curry"},
+    {"name": "Fish Curry", "image": "https://loremflickr.com/320/220/fish,curry"},
+    {"name": "Chicken Curry", "image": "https://loremflickr.com/320/220/chicken,curry"},
+    {"name": "Veg Thali", "image": "https://loremflickr.com/320/220/veg,thali"},
+    {"name": "Non Veg Thali", "image": "https://loremflickr.com/320/220/nonveg,thali"},
+    {"name": "Masala Dosa", "image": "https://loremflickr.com/320/220/masala,dosa"},
+    {"name": "Plain Dosa", "image": "https://loremflickr.com/320/220/plain,dosa"},
+    {"name": "Idli Sambar", "image": "https://loremflickr.com/320/220/idli,sambar"},
+    {"name": "Upma", "image": "https://loremflickr.com/320/220/upma"},
+    {"name": "Poha", "image": "https://loremflickr.com/320/220/poha"},
+    {"name": "Paratha with Curd", "image": "https://loremflickr.com/320/220/paratha,curd"},
+    {"name": "Aloo Paratha", "image": "https://loremflickr.com/320/220/aloo,paratha"},
+    {"name": "Stuffed Naan", "image": "https://loremflickr.com/320/220/stuffed,naan"},
+    {"name": "Roti Sabzi", "image": "https://loremflickr.com/320/220/roti,sabzi"},
+    {"name": "Dal Makhani", "image": "https://loremflickr.com/320/220/dal,makhani"},
+    {"name": "Paneer Bhaji", "image": "https://loremflickr.com/320/220/paneer,bhaji"},
+    {"name": "Mix Veg", "image": "https://loremflickr.com/320/220/mix,veg"},
+    {"name": "Veg Korma", "image": "https://loremflickr.com/320/220/veg,korma"}
+] %}
+
 <div class="container">
-    <div class="card">
-        <h2>Select Meal 🍛</h2>
+    <div class="card menu-card">
+        <h2>Select Meal</h2>
 
-        <!-- MEALS LIST -->
-        <a href="/order?item=Paneer%20Butter%20Masala"><button>Paneer Butter Masala</button></a>
-        <a href="/order?item=Chicken%20Biryani"><button>Chicken Biryani</button></a>
-        <a href="/order?item=Dal%20Tadka"><button>Dal Tadka</button></a>
-        <a href="/order?item=Rajma%20Chawal"><button>Rajma Chawal</button></a>
-        <a href="/order?item=Veg%20Pulao"><button>Veg Pulao</button></a>
-        <a href="/order?item=Butter%20Chicken"><button>Butter Chicken</button></a>
-        <a href="/order?item=Chole%20Bhature"><button>Chole Bhature</button></a>
-        <a href="/order?item=Fried%20Rice"><button>Fried Rice</button></a>
-        <a href="/order?item=Jeera%20Rice"><button>Jeera Rice</button></a>
-        <a href="/order?item=Kadhi%20Chawal"><button>Kadhi Chawal</button></a>
-        <a href="/order?item=Palak%20Paneer"><button>Palak Paneer</button></a>
-        <a href="/order?item=Matar%20Paneer"><button>Matar Paneer</button></a>
-        <a href="/order?item=Egg%20Curry"><button>Egg Curry</button></a>
-        <a href="/order?item=Fish%20Curry"><button>Fish Curry</button></a>
-        <a href="/order?item=Chicken%20Curry"><button>Chicken Curry</button></a>
-        <a href="/order?item=Veg%20Thali"><button>Veg Thali</button></a>
-        <a href="/order?item=Non%20Veg%20Thali"><button>Non Veg Thali</button></a>
-        <a href="/order?item=Masala%20Dosa"><button>Masala Dosa</button></a>
-        <a href="/order?item=Plain%20Dosa"><button>Plain Dosa</button></a>
-        <a href="/order?item=Idli%20Sambar"><button>Idli Sambar</button></a>
-        <a href="/order?item=Upma"><button>Upma</button></a>
-        <a href="/order?item=Poha"><button>Poha</button></a>
-        <a href="/order?item=Paratha%20with%20Curd"><button>Paratha with Curd</button></a>
-        <a href="/order?item=Aloo%20Paratha"><button>Aloo Paratha</button></a>
-        <a href="/order?item=Stuffed%20Naan"><button>Stuffed Naan</button></a>
-        <a href="/order?item=Roti%20Sabzi"><button>Roti Sabzi</button></a>
-        <a href="/order?item=Dal%20Makhani"><button>Dal Makhani</button></a>
-        <a href="/order?item=Paneer%20Bhaji"><button>Paneer Bhaji</button></a>
-        <a href="/order?item=Mix%20Veg"><button>Mix Veg</button></a>
-        <a href="/order?item=Veg%20Korma"><button>Veg Korma</button></a>
+        <div class="menu-grid">
+            {% for meal in meals %}
+            <a class="menu-item" href="/order?item={{ meal.name|urlencode }}">
+                <img src="{{ meal.image }}" alt="{{ meal.name }}" loading="lazy">
+                <span>{{ meal.name }}</span>
+            </a>
+            {% endfor %}
+        </div>
 
-        <br><br>
-        
-        <a href="/options"><button>⬅ Back</button></a>
-
+        <a class="back-link" href="/options"><button>Back</button></a>
     </div>
 </div>
 

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="title desc">
+  <title id="title">Fresh Fruits</title>
+  <desc id="desc">Fresh fruits including apple, banana, orange, grapes, and watermelon.</desc>
+  <rect width="360" height="240" fill="#fff0f5"/>
+  <circle cx="125" cy="123" r="34" fill="#e74343"/>
+  <path d="M126 88c8-16 23-16 33-8-17 5-26 11-33 8z" fill="#3c9d4e"/>
+  <ellipse cx="211" cy="132" rx="43" ry="25" fill="#ffcb39"/>
+  <path d="M177 132c19 31 66 27 81-5" fill="none" stroke="#d79211" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="235" cy="93" r="24" fill="#ff8f2f"/>
+  <circle cx="266" cy="123" r="8" fill="#7b3fb2"/>
+  <circle cx="250" cy="137" r="8" fill="#7b3fb2"/>
+  <circle cx="282" cy="137" r="8" fill="#7b3fb2"/>
+  <circle cx="266" cy="151" r="8" fill="#7b3fb2"/>
+  <path d="M87 163c36-31 79-33 112-3-27 24-82 24-112 3z" fill="#2fa861"/>
+  <path d="M96 164c25 11 64 11 92-2" fill="#f04455"/>
+  <text x="180" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#9b2450">Fruits</text>
+</svg>

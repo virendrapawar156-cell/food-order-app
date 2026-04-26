@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="title desc">
+  <title id="title">Cold Drinks</title>
+  <desc id="desc">A glass of juice, a soda cup, and coffee.</desc>
+  <rect width="360" height="240" fill="#e9f8ff"/>
+  <path d="M88 74h74l-9 108H97z" fill="#ffffff" stroke="#76c7de" stroke-width="5"/>
+  <path d="M98 119h53l-5 56h-43z" fill="#ff9f2e"/>
+  <path d="M96 92h58" stroke="#76c7de" stroke-width="5" stroke-linecap="round"/>
+  <path d="M137 74l20-38" stroke="#2f8fac" stroke-width="7" stroke-linecap="round"/>
+  <rect x="197" y="80" width="66" height="98" rx="13" fill="#e84848"/>
+  <path d="M190 80h80l-9 23h-62z" fill="#ffffff" stroke="#e84848" stroke-width="4"/>
+  <path d="M215 118h31" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <rect x="261" y="113" width="42" height="49" rx="12" fill="#8b5530"/>
+  <path d="M303 125c20 2 19 28 0 31" fill="none" stroke="#8b5530" stroke-width="8"/>
+  <path d="M268 104c2-10 9-13 5-24M285 104c2-10 9-13 5-24" fill="none" stroke="#b77c51" stroke-width="5" stroke-linecap="round"/>
+  <text x="180" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#126d87">Drinks</text>
+</svg>

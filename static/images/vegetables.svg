@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-labelledby="title desc">
+  <title id="title">Fresh Vegetables</title>
+  <desc id="desc">A basket of mixed fresh vegetables.</desc>
+  <rect width="360" height="240" fill="#edf9e8"/>
+  <path d="M80 118h200l-20 66H100z" fill="#b97942"/>
+  <path d="M92 118c8 51 169 51 176 0" fill="none" stroke="#8d592f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M110 117c-8-35 36-43 42-9" fill="#f05b45"/>
+  <path d="M141 105c9-33 57-30 56 8" fill="#67b847"/>
+  <path d="M193 109c11-36 58-23 49 15" fill="#f3a232"/>
+  <path d="M236 115c10-34 45-25 42 5" fill="#7ac943"/>
+  <circle cx="114" cy="126" r="22" fill="#e8463a"/>
+  <circle cx="162" cy="130" r="23" fill="#8bc34a"/>
+  <circle cx="212" cy="127" r="21" fill="#ffb74d"/>
+  <circle cx="252" cy="132" r="18" fill="#5fbf52"/>
+  <path d="M177 77c-21 8-31 23-31 42 23-4 38-17 44-40z" fill="#3d9441"/>
+  <path d="M218 79c-15 13-21 28-16 43 19-8 30-22 31-42z" fill="#2f8d46"/>
+  <text x="180" y="218" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#2f6d2f">Vegetables</text>
+</svg>

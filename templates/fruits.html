@@ -7,35 +7,43 @@
 
 <body class="fruit-bg">
 
+{% set fruits = [
+    {"name": "Apple", "image": "https://loremflickr.com/320/220/apple,fruit"},
+    {"name": "Banana", "image": "https://loremflickr.com/320/220/banana,fruit"},
+    {"name": "Mango", "image": "https://loremflickr.com/320/220/mango,fruit"},
+    {"name": "Orange", "image": "https://loremflickr.com/320/220/orange,fruit"},
+    {"name": "Grapes", "image": "https://loremflickr.com/320/220/grapes,fruit"},
+    {"name": "Pineapple", "image": "https://loremflickr.com/320/220/pineapple,fruit"},
+    {"name": "Watermelon", "image": "https://loremflickr.com/320/220/watermelon,fruit"},
+    {"name": "Papaya", "image": "https://loremflickr.com/320/220/papaya,fruit"},
+    {"name": "Strawberry", "image": "https://loremflickr.com/320/220/strawberry,fruit"},
+    {"name": "Kiwi", "image": "https://loremflickr.com/320/220/kiwi,fruit"},
+    {"name": "Pomegranate", "image": "https://loremflickr.com/320/220/pomegranate,fruit"},
+    {"name": "Guava", "image": "https://loremflickr.com/320/220/guava,fruit"},
+    {"name": "Chikoo", "image": "https://loremflickr.com/320/220/chikoo,fruit"},
+    {"name": "Lychee", "image": "https://loremflickr.com/320/220/lychee,fruit"},
+    {"name": "Dragon Fruit", "image": "https://loremflickr.com/320/220/dragon,fruit"},
+    {"name": "Peach", "image": "https://loremflickr.com/320/220/peach,fruit"},
+    {"name": "Pear", "image": "https://loremflickr.com/320/220/pear,fruit"},
+    {"name": "Plum", "image": "https://loremflickr.com/320/220/plum,fruit"},
+    {"name": "Blueberry", "image": "https://loremflickr.com/320/220/blueberry,fruit"},
+    {"name": "Blackberry", "image": "https://loremflickr.com/320/220/blackberry,fruit"}
+] %}
 
 <div class="container">
-    <div class="card">
-        <h2>Select Fruits 🍎</h2>
+    <div class="card menu-card">
+        <h2>Select Fruits</h2>
 
-        <a href="/order?item=Apple"><button>Apple</button></a>
-        <a href="/order?item=Banana"><button>Banana</button></a>
-        <a href="/order?item=Mango"><button>Mango</button></a>
-        <a href="/order?item=Orange"><button>Orange</button></a>
-        <a href="/order?item=Grapes"><button>Grapes</button></a>
-        <a href="/order?item=Pineapple"><button>Pineapple</button></a>
-        <a href="/order?item=Watermelon"><button>Watermelon</button></a>
-        <a href="/order?item=Papaya"><button>Papaya</button></a>
-        <a href="/order?item=Strawberry"><button>Strawberry</button></a>
-        <a href="/order?item=Kiwi"><button>Kiwi</button></a>
-        <a href="/order?item=Pomegranate"><button>Pomegranate</button></a>
-        <a href="/order?item=Guava"><button>Guava</button></a>
-        <a href="/order?item=Chikoo"><button>Chikoo</button></a>
-        <a href="/order?item=Lychee"><button>Lychee</button></a>
-        <a href="/order?item=Dragon%20Fruit"><button>Dragon Fruit</button></a>
-        <a href="/order?item=Peach"><button>Peach</button></a>
-        <a href="/order?item=Pear"><button>Pear</button></a>
-        <a href="/order?item=Plum"><button>Plum</button></a>
-        <a href="/order?item=Blueberry"><button>Blueberry</button></a>
-        <a href="/order?item=Blackberry"><button>Blackberry</button></a>
+        <div class="menu-grid">
+            {% for fruit in fruits %}
+            <a class="menu-item" href="/order?item={{ fruit.name|urlencode }}">
+                <img src="{{ fruit.image }}" alt="{{ fruit.name }}" loading="lazy">
+                <span>{{ fruit.name }}</span>
+            </a>
+            {% endfor %}
+        </div>
 
-        <br><br>
-        <a href="/options"><button>⬅ Back</button></a>
-
+        <a class="back-link" href="/options"><button>Back</button></a>
     </div>
 </div>
 
